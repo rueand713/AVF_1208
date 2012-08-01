@@ -1,0 +1,46 @@
+body {
+    background: #000;
+    margin: 1% 5%;
+    min-width: 93%;
+}
+
+article {
+    border-radius: 10px;
+    border-color: #999;
+    border-width: medium;
+    border-style: solid;
+    background: #fff;
+    min-width: 90%;
+    max-width: 90%;
+    padding: 0.25% 2.75%;
+    min-height: 590px;
+}
+
+.site-header {
+    border-style: solid;
+    border-width: medium;
+    border-radius: 10px;
+    border-color: #000;
+    background: #999;
+    margin: 1.5% 0.4% 0.75%;
+    display: block;
+    padding: 0.25% 0.75%;
+    clear: both;
+}
+
+._2col-section {
+    border-style: solid;
+    border-width: medium;
+    border-radius: 10px;
+    border-color: #000;
+    background: #999;
+    margin: 1% 0.4%;
+    min-width: 48%;
+    max-width: 48%;
+    padding: 0.25% 0.3%;
+    float: left;
+}
+
+.main-section-div {
+    padding: 10px;
+}
