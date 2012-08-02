@@ -16,6 +16,11 @@ article {
     min-height: 590px;
 }
 
+a {
+    text-align: center;
+    text-decoration: none;
+}
+
 .site-header {
     border-style: solid;
     border-width: medium;
@@ -43,4 +48,36 @@ article {
 
 .main-section-div {
     padding: 10px;
+}
+
+/* ---- SKELETON CUSTOMIZATION ENDS HERE ----- */
+
+li {
+    list-style: none;
+}
+h2 {
+    text-align: left;
+    text-decoration: underline;
+}
+
+.float-left {
+    float: left;
+    clear: left;
+}
+.no-float {
+    clear: both;
+}
+
+div > a {
+    display: block;
+    float: left;
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+    border-color: #fff;
+    border-width: 2px;
+    color: #fff;
+    padding: 5px;
+    margin-bottom: 1%;
+    background: -moz-linear-gradient(#f4f5f9 0%, #4e5e9e 20%, #4e5e9e 80%, #f4f5f9 100%);
 }
