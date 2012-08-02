@@ -333,7 +333,7 @@
                 break;
             
             case "display":
-	    case "type":
+	    case "show":
                 target.style.display = option;
                 break;
             
