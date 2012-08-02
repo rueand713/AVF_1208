@@ -1548,6 +1548,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	// sets up an event listener of type event on the target variable
 	// invokes the func function when it fires. target should be a DOM element reference
 	function setEvent(target, event, func) {
+	      
 	      function makeEvent() {
 		if (target) {
 		      target.addEventListener(event, function(){
