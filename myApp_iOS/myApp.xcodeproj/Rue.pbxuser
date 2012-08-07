@@ -1,0 +1,143 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* myApp */ = {
+		activeExec = 0;
+		executables = (
+			8343471D15CB390C0026500D /* myApp */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 8343471D15CB390C0026500D /* myApp */;
+		activeSDKPreference = iphonesimulator4.3;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* myApp */;
+		codeSenseManager = 8343479615CB39100026500D /* Code sense */;
+		executables = (
+			8343471D15CB390C0026500D /* myApp */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					356,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 365974498;
+			PBXWorkspaceStateSaveDate = 365974498;
+		};
+		perUserProjectItems = {
+			831D640F15CB4890005B52FF /* PlistBookmark */ = 831D640F15CB4890005B52FF /* PlistBookmark */;
+			838332AC15CB4AA000A651FF /* PBXTextBookmark */ = 838332AC15CB4AA000A651FF /* PBXTextBookmark */;
+			839CED6E15D053EE00EDAD08 /* PBXTextBookmark */ = 839CED6E15D053EE00EDAD08 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 8343479515CB39100026500D /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	831D640F15CB4890005B52FF /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* myApp-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/Rue/Desktop/myApp/myApp/myApp-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	8343471D15CB390C0026500D /* myApp */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = myApp;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	8343479515CB39100026500D /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	8343479615CB39100026500D /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	838332AC15CB4AA000A651FF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 838332AD15CB4AA000A651FF /* CDVFileTransfer.m */;
+		name = "CDVFileTransfer.m: 252";
+		rLen = 0;
+		rLoc = 10901;
+		rType = 0;
+		vrLen = 860;
+		vrLoc = 10431;
+	};
+	838332AD15CB4AA000A651FF /* CDVFileTransfer.m */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.objc;
+		name = CDVFileTransfer.m;
+		path = /Users/Rue/Documents/CordovaLib/Classes/CDVFileTransfer.m;
+		sourceTree = "<absolute>";
+	};
+	839CED6E15D053EE00EDAD08 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 839CED6F15D053EE00EDAD08 /* CDVFileTransfer.m */;
+		name = "CDVFileTransfer.m: 252";
+		rLen = 0;
+		rLoc = 10901;
+		rType = 0;
+		vrLen = 860;
+		vrLoc = 10431;
+	};
+	839CED6F15D053EE00EDAD08 /* CDVFileTransfer.m */ = {
+		isa = PBXFileReference;
+		name = CDVFileTransfer.m;
+		path = /Users/Rue/Documents/CordovaLib/Classes/CDVFileTransfer.m;
+		sourceTree = "<absolute>";
+	};
+	8D1107310486CEB800E47090 /* myApp-Info.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{836, 320}, {750, 558}}";
+		};
+	};
+}
