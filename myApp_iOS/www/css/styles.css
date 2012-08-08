@@ -11,6 +11,7 @@ body {
 }
 
 article {
+    margin: auto 0px;
     position: relative;
     border-radius: 10px;
     border-color: #999;
@@ -72,6 +73,7 @@ a {
 
 /* ---- SKELETON CUSTOMIZATION ENDS HERE ----- */
 
+
 li {
     list-style: none;
 }
@@ -93,6 +95,7 @@ h2 {
     float: left;
     clear: left;
 }
+
 .no-float {
     clear: both;
 }
@@ -114,7 +117,7 @@ div > a {
 
 ul.discussion > li{
     display: inline-block;
-    margin: auto 0.5%;
+    margin: auto 1%;
 }
 
 a.discussion {
@@ -122,6 +125,7 @@ a.discussion {
     height: 50px;
     width: 50px;
     color: #fff;
+    margin: auto 1px;
     padding: 9% 4% 0% 4%;
     border-radius: 9%;
     border-color: #fff;
@@ -129,6 +133,13 @@ a.discussion {
     background: -moz-linear-gradient(#f4f5f9 0%, #9a1010 10%, #681010 50%, #9a1010 90%, #f4f5f9 100%);
     background: -o-linear-gradient(#f4f5f9 0%, #4e5e9e 20%, #4e5e9e 80%, #f4f5f9 100%);
     background: -webkit-linear-gradient(#f4f5f9 0%, #4e5e9e 20%, #4e5e9e 80%, #f4f5f9 100%);
+}
+
+/* Map styling starts here */
+
+div#geo-loc > div {
+    width: 90%;
+    margin: 0px auto;
 }
 
 div#geo-loc img {
@@ -148,7 +159,9 @@ section#loc-sec {
     display: block;
     padding-top: 25%;
 }
+/* End of map styling */
 
+/* Cloud styling starts here */
 #foreground {
     position: fixed;
     display: block;
@@ -192,3 +205,5 @@ section#loc-sec {
     top: 0%;
     left: 50%;
 }
+
+/* End of cloud styling */

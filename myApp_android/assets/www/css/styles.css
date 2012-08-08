@@ -11,6 +11,8 @@ body {
 }
 
 article {
+    margin: auto 0px;
+    position: relative;
     border-radius: 10px;
     border-color: #999;
     border-width: medium;
@@ -18,11 +20,13 @@ article {
     background: #aaa;
     background: -moz-linear-gradient(#fff 0%, #aaa 15%, #fff 20%, #aaa 35%, #fff 40%, #aaa 55%, #fff 60%, #aaa 75%, #fff 80%, #aaa 95%, #fff 100%);
     background: -o-linear-gradient(#fff 0%, #aaa 15%, #fff 20%, #aaa 35%, #fff 40%, #aaa 55%, #fff 60%, #aaa 75%, #fff 80%, #aaa 95%, #fff 100%);
-    background: -webkit-linear-gradient(#fff 0%, #aaa 15%, #fff 20%, #aaa 35%, #fff 40%, #aaa 55%, #fff 60%, #aaa 75%, #fff 80%, #aaa 95%, #fff #fff);
+    background: -webkit-linear-gradient(#fff 0%, #aaa 15%, #fff 20%, #aaa 35%, #fff 40%, #aaa 55%, #fff 60%, #aaa 75%, #fff 80%, #aaa 95%, #fff 100%);
     min-width: 90%;
-    
+    max-width: 90%;
     padding: 0.25% 2.75%;
-    min-height: 750px;
+    /*min-height: 590px;*/
+    clear: both;
+    overflow: auto;
 }
 
 a {
@@ -36,6 +40,7 @@ a {
     border-width: medium;
     border-radius: 10px;
     border-color: #7789ab;
+    background: #556789;
     background: -moz-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
     background: -o-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
     background: -webkit-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
@@ -50,17 +55,16 @@ a {
     border-width: medium;
     border-radius: 10px;
     border-color: #7789ab;
-   /* background: #334567;*/
-    background-image: -webkit-gradient(linear, 0%, 0%, 0%, color-stop(0%, #000000), color-stop(100%, #ffffff));
-    background-image: -moz-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
-    background-image: -o-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
-    background-image: -webkit-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
-    background-image: -linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
+    background: #334567;
+    background: -moz-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
+    background: -o-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
+    background: -webkit-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
     margin: 1% 0.4%;
-    min-width: 50%;
+    min-width: 60%;
     padding: 0.25% 0.3%;
     float: left;
-    min-height: 300px;
+    min-height: 325px;
+    overflow: auto;
 }
 
 .main-section-div {
@@ -68,6 +72,7 @@ a {
 }
 
 /* ---- SKELETON CUSTOMIZATION ENDS HERE ----- */
+
 
 li {
     list-style: none;
@@ -90,22 +95,117 @@ h2 {
     float: left;
     clear: left;
 }
+
 .no-float {
     clear: both;
 }
 
 div > a {
-    display: block;
     float: left;
-    height: 50px;
-    width: 50px;
-    border-radius: 5px;
-    border-color: #fff;
-    border-width: 2px;
+    height: 64px;
+    width: 64px;
     color: #fff;
-    padding: 5px;
-    margin-bottom: 1%;
+    padding: 3% 1% 0% 1%;
+    margin: auto 1%;
+    border-radius: 9%;
+    border-color: #fff;
+    border-width: 4%;
+    background: #9a1010;
     background: -moz-linear-gradient(#f4f5f9 0%, #9a1010 10%, #681010 50%, #9a1010 90%, #f4f5f9 100%);
     background: -o-linear-gradient(#f4f5f9 0%, #4e5e9e 20%, #4e5e9e 80%, #f4f5f9 100%);
     background: -webkit-linear-gradient(#f4f5f9 0%, #4e5e9e 20%, #4e5e9e 80%, #f4f5f9 100%);
 }
+
+ul.discussion > li{
+    display: inline-block;
+    margin: auto 1%;
+}
+
+a.discussion {
+    display: block;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    margin: auto 1px;
+    padding: 9% 4% 0% 4%;
+    border-radius: 9%;
+    border-color: #fff;
+    border-width: 4%;
+    background: #9a1010;
+    background: -moz-linear-gradient(#f4f5f9 0%, #9a1010 10%, #681010 50%, #9a1010 90%, #f4f5f9 100%);
+    background: -o-linear-gradient(#f4f5f9 0%, #4e5e9e 20%, #4e5e9e 80%, #f4f5f9 100%);
+    background: -webkit-linear-gradient(#f4f5f9 0%, #4e5e9e 20%, #4e5e9e 80%, #f4f5f9 100%);
+}
+
+/* Map styling starts here */
+
+div#geo-loc > div {
+    width: 90%;
+    margin: 0px auto;
+}
+
+div#geo-loc img {
+    margin: 2.5% auto;
+    display: block;
+    border-width: medium;
+    border-style: solid;
+    border-color: #fff;
+    border-radius: 10px;
+}
+
+section#loc-sec {
+    display: none;
+}
+
+#alerts span {
+    display: block;
+    padding-top: 25%;
+}
+/* End of map styling */
+
+/* Cloud styling starts here */
+#foreground {
+    position: fixed;
+    display: block;
+    left: 0px;
+    top: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.fg-image {
+    background-image: url("../images/clouds.png");
+    width: 130px;
+    height: 80px;
+    padding: 0px;
+    margin: 0px;
+    z-index: 10;
+    position: fixed;
+}
+
+#c1 {
+    left: 0%;
+    top: 0%;
+}
+
+#c2 {
+    right: 0%;
+    top: 0%;
+}
+
+#c3 {
+    left: 0%;
+    bottom: 0%;
+}
+
+#c4 {
+    right: 0%;
+    bottom: 0%;
+}
+
+#c5 {
+    top: 0%;
+    left: 50%;
+}
+
+/* End of cloud styling */
