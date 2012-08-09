@@ -56,13 +56,20 @@ window.addEventListener("DOMContentLoaded", function(){
             ercode = error.code;
             
             // alert the error code and message
-            alert("ERROR: " + ercode + " // " + ermsg);
+            notify("ERROR: " + ercode + " // " + ermsg);
     };
     
     
     // foreground setting
     function setFg() {
         
+    	// show the foreground section
+    	styl("#foreground", "block", "show");
+    	
+    	for (var i=0; i<5; i++) {
+    	styl("#c"+(i+1), "inline", "show");
+    	};
+    	
         // fetches the cloud divs
         var cDivs = sel("div#cloud-wrapper > div");
         
@@ -110,8 +117,10 @@ window.addEventListener("DOMContentLoaded", function(){
         
         // set the click function for geo-location
         evt(geoId, "click", function(){
+        	var opts = {maximumAge:1000, timeout: 5000, enableHighAccuracy: true};
+        	
             // get location
-            navigator.geolocation.getCurrentPosition(success, fail);    
+        	navigator.geolocation.getCurrentPosition(success, fail, opts);    
         }).make();
         
         evt(alertId, "click", function(){
@@ -216,5 +225,5 @@ window.addEventListener("DOMContentLoaded", function(){
     
     // set CRUD navigation events
     setEvents();
-   
+
 });
