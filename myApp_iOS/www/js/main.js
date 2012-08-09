@@ -5,6 +5,29 @@ var height = window.innerHeight,
 
 window.addEventListener("DOMContentLoaded", function(){
     
+    // alert function takes an array as first argument or all 4 arguments
+    function notify(msg, func, title, btnval) {
+        
+        // if msg is an array of properties
+        if (typeof(msg) == "object") {
+            func = msg.callback;
+            title = msg.title;
+            btnval = msg.btnval;
+            msg = msg.msg;
+        }
+        else {
+            // if arguments are missing sets defaults
+            if (!msg || typeof(msg) != "string") {msg = "An error occurred!"};
+            if (!func || typeof(func) != "function") {func = function(){}};
+            if (!title || typeof(title) != "string") {title = "Exception"};
+            if (!btnval || typeof(btnval) != "string") {btnval = "Done"};
+        };
+        
+        // sets the notification
+        navigator.notification.alert(msg, func, title, btnval);
+    };
+    
+    
     // geo-location success callback
     function success(position){
         
@@ -21,7 +44,9 @@ window.addEventListener("DOMContentLoaded", function(){
                      "&markers=color:blue%7Clabel:A%7C"+ lat + "," + lon + "&sensor=true";
                      
         // create the google map with the passed in map position values
-        _element(target, "img", ["src", mapPos], "make");
+        if (find("img").$tag().length < 1) {
+            _element(target, "img", ["src", mapPos], "make");
+        };
     };
     
     
@@ -33,6 +58,7 @@ window.addEventListener("DOMContentLoaded", function(){
             // alert the error code and message
             alert("ERROR: " + ercode + " // " + ermsg);
     };
+    
     
     // foreground setting
     function setFg() {
@@ -60,12 +86,14 @@ window.addEventListener("DOMContentLoaded", function(){
         };
     };
     
+    
     // navigational events
     function setEvents() {
         var fitLink = "https://rueand713.cloudant.com/myfitapp/_design/fitapp/index.html",
             wk1Link = "discussion1.html",
             fitId = find("my-fitness").$id(),
             geoId = find("geoloc").$id(),
+            alertId = find("alerts").$id(),
             wk1 = find("discuss-wk1").$id(),
             adrbtn = find("addr-but").$id(),
             adr = find("usr-addr").$id();
@@ -84,6 +112,11 @@ window.addEventListener("DOMContentLoaded", function(){
         evt(geoId, "click", function(){
             // get location
             navigator.geolocation.getCurrentPosition(success, fail);    
+        }).make();
+        
+        evt(alertId, "click", function(){
+            notify("To test a real notification \n "+
+                   "Submit a null value into the 'Map It' feature.", null, "Test Alert", "OK");    
         }).make();
         
         // set the "map it" click function
@@ -106,12 +139,23 @@ window.addEventListener("DOMContentLoaded", function(){
                     _attribute(find("img").$tag(1), ["src", mapPos], "set");
                 };
             } else {
+                
+                var err = {
+                    msg: "Please enter a valid address",
+                    callback: function(){},
+                    title: "Oops!",
+                    btnval: "Done"
+                };
+                
                 // alert nothing was input
+                notify(err);
             };
             
         }).make();
         
-        evt(find("c5").$id(), "mouseover", function(){
+        
+        // sets the mouseover event for the moving cloud
+        evt(find("c5").$id(), "touchstart", function(){
             
             // checks if pause is set or unset
             // takes action based on that logic
@@ -161,15 +205,15 @@ window.addEventListener("DOMContentLoaded", function(){
                   cloudMov.style.left= String(cloudData[0] + "%");
                   
                   // if the cloud goes out of the screen reset the direction
-                  if (cloudMov.offsetLeft < 0) {
-                    cloudData[0] = 0;
+                  if (cloudMov.offsetLeft < -50) {
+                    //cloudData[0] = 0;
                     cloudData[1] = 0.15;
                   }
-                  else if (cloudMov.offsetLeft >= (nWid - 130)) {
-                    cloudData[0] = 91;
+                  else if (cloudMov.offsetLeft >= (nWid * 0.91)) {
+                    //cloudData[0] = 91;
                     cloudData[1] = -0.15;
                   };
               };
         });
-    
+
 });

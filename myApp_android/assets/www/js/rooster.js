@@ -10,7 +10,7 @@
 
 
 // System global variables
-    var roo, sel, dat$, dom$, timr, evt,
+    var roo, sel, dat$, dom$, timr, evt, styl,
 	ctaMemory = [undefined],
 	ctaTimer;
 	
@@ -1512,36 +1512,13 @@ window.addEventListener("DOMContentLoaded", function(){
 	// len is the time in seconds to wait before invoking the timer
 	// func is the option function to pass in for the timer to call when invoked.
 	function makeTimer(len, repeat, func) {
+	  
 	    if (len) {
-	      if (!repeat) {
-		  window.setTimeout(function(func) {
-		      // sets empty function to house passed in function
-		      var newFunc = function(){};
-		      
-		      // if there is a passed in function set the newFunc to that function
-		      if (func) {
-			newFunc = func;
-		      };
-		      
-		      // call the newFunc function invoking the passed in functionality if present
-		      // or nothing when null
-		      newFunc();
-		    }, len);
+	      if (!repeat || repeat != true) {
+		  window.setTimeout(func, len);
 	      } else {
-		  window.setInterval(function(func){
-		    // sets empty function to house passed in function
-		      var newFunc = function(){};
-		      
-		      // if there is a passed in function set the newFunc to that function
-		      if (func) {
-			newFunc = func;
-		      };
-		      
-		      // call the newFunc function invoking the passed in functionality if present
-		      // or nothing when null
-		      newFunc();
-		    }, len)
-	      }
+		  window.setInterval(func, len);
+	      };
 	    };
 	};
 	
