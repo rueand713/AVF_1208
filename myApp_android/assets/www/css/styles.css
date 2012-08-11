@@ -14,14 +14,16 @@ article {
     margin: auto 0px;
     position: relative;
     border-radius: 10px;
+    -webkit-border-radius: 10px;
     border-color: #999;
     border-width: medium;
     border-style: solid;
-    background: #aaa;
-    background: -moz-linear-gradient(#fff 0%, #aaa 15%, #fff 20%, #aaa 35%, #fff 40%, #aaa 55%, #fff 60%, #aaa 75%, #fff 80%, #aaa 95%, #fff 100%);
-    background: -o-linear-gradient(#fff 0%, #aaa 15%, #fff 20%, #aaa 35%, #fff 40%, #aaa 55%, #fff 60%, #aaa 75%, #fff 80%, #aaa 95%, #fff 100%);
-    background: -webkit-linear-gradient(#fff 0%, #aaa 15%, #fff 20%, #aaa 35%, #fff 40%, #aaa 55%, #fff 60%, #aaa 75%, #fff 80%, #aaa 95%, #fff 100%);
-    /*background: -webkit-gradient(linear, 0%, 0%, from(#fff), to(#aaa);*/
+    background-color: #aaa;
+    background-image: -moz-linear-gradient(#fff 0%, #aaa 15%, #fff 20%, #aaa 35%, #fff 40%, #aaa 55%, #fff 60%, #aaa 75%, #fff 80%, #aaa 95%, #fff 100%);
+    background-image: -o-linear-gradient(#fff 0%, #aaa 15%, #fff 20%, #aaa 35%, #fff 40%, #aaa 55%, #fff 60%, #aaa 75%, #fff 80%, #aaa 95%, #fff 100%);
+    background-image: -webkit-linear-gradient(#fff 0%, #aaa 15%, #fff 20%, #aaa 35%, #fff 40%, #aaa 55%, #fff 60%, #aaa 75%, #fff 80%, #aaa 95%, #fff 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(15%, #aaa), color-stop(20%, #fff), color-stop(35%, #aaa),
+                      color-stop(40%, #fff), color-stop(55%, #aaa), color-stop(60%, #fff), color-stop(75%, #aaa), color-stop(80%, #fff), color-stop(95%, #aaa), color-stop(100%, #fff));
     min-width: 90%;
     max-width: 90%;
     padding: 0.25% 2.75%;
@@ -40,11 +42,14 @@ a {
     border-style: solid;
     border-width: medium;
     border-radius: 10px;
+    -webkit-border-radius: 10px;
     border-color: #7789ab;
-    background: #556789;
-    background: -moz-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
-    background: -o-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
-    background: -webkit-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
+    background-color: #556789;
+    background-image: -moz-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
+    background-image: -o-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
+    background-image: -webkit-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #556789),
+                      color-stop(15%, #334567), color-stop(90%, #334567), color-stop(100%, #556789));
     margin: 1.5% 0.4% 0.75%;
     display: block;
     padding: 0.25% 0.75%;
@@ -55,11 +60,14 @@ a {
     border-style: solid;
     border-width: medium;
     border-radius: 10px;
+    -webkit-border-radius: 10px;
     border-color: #7789ab;
-    background: #334567;
-    background: -moz-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
-    background: -o-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
-    background: -webkit-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
+    background-color: #334567;
+    background-image: -moz-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
+    background-image: -o-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
+    background-image: -webkit-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #556789),
+                      color-stop(15%, #334567), color-stop(90%, #334567), color-stop(100%, #556789));
     margin: 1% 0.4%;
     min-width: 60%;
     padding: 0.25% 0.3%;
@@ -108,13 +116,20 @@ div > a {
     color: #fff;
     padding: 3% 1% 0% 1%;
     margin: auto 1%;
+    border-radius: 9%;
     -webkit-border-radius: 9%;
     border-color: #fff;
     border-width: 4%;
-    background: #9a1010;
-    background: -moz-linear-gradient(#f4f5f9 0%, #9a1010 10%, #681010 50%, #9a1010 90%, #f4f5f9 100%);
-    background: -o-linear-gradient(#f4f5f9 0%, #4e5e9e 20%, #4e5e9e 80%, #f4f5f9 100%);
-    background: -webkit-linear-gradient(#f4f5f9 0%, #4e5e9e 20%, #4e5e9e 80%, #f4f5f9 100%);
+    background-color: #9a1010;
+    background-image: -moz-linear-gradient(#f4f5f9 0%, #9a1010 10%, #681010 50%, #9a1010 90%, #f4f5f9 100%);
+    background-image: -o-linear-gradient(#f4f5f9 0%, #9a1010 10%, #681010 50%, #9a1010 90%, #f4f5f9 100%);
+    background-image: -webkit-linear-gradient(#f4f5f9 0%, #9a1010 10%, #681010 50%, #9a1010 90%, #f4f5f9 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f5f9),
+                      color-stop(15%, #9a1010), color-stop(90%, #9a1010), color-stop(100%, #f4f5f9)); 
+}
+
+ul {
+    padding-left: 0px;
 }
 
 ul.discussion > li{
@@ -130,12 +145,19 @@ a.discussion {
     margin: auto 1px;
     padding: 9% 4% 0% 4%;
     border-radius: 9%;
+    -webkit-border-radius: 9%;
     border-color: #fff;
     border-width: 4%;
-    background: #9a1010;
-    background: -moz-linear-gradient(#f4f5f9 0%, #9a1010 10%, #681010 50%, #9a1010 90%, #f4f5f9 100%);
-    background: -o-linear-gradient(#f4f5f9 0%, #4e5e9e 20%, #4e5e9e 80%, #f4f5f9 100%);
-    background: -webkit-linear-gradient(#f4f5f9 0%, #4e5e9e 20%, #4e5e9e 80%, #f4f5f9 100%);
+    background-color: #9a1010;
+    background-image: -moz-linear-gradient(#f4f5f9 0%, #9a1010 10%, #681010 50%, #9a1010 90%, #f4f5f9 100%);
+    background-image: -o-linear-gradient(#f4f5f9 0%, #9a1010 10%, #681010 50%, #9a1010 90%, #f4f5f9 100%);
+    background-image: -webkit-linear-gradient(#f4f5f9 0%, #9a1010 10%, #681010 50%, #9a1010 90%, #f4f5f9 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f5f9),
+                      color-stop(15%, #9a1010), color-stop(90%, #9a1010), color-stop(100%, #f4f5f9)); 
+}
+
+.home-link {
+    float: left;
 }
 
 /* Map styling starts here */
@@ -152,10 +174,7 @@ div#geo-loc img {
     border-style: solid;
     border-color: #fff;
     border-radius: 10px;
-}
-
-section#loc-sec {
-    display: none;
+    -webkit-border-radius: 10px;
 }
 
 #alerts span {
@@ -166,7 +185,7 @@ section#loc-sec {
 
 /* Cloud styling starts here */
 #foreground {
-	display: none;
+    display: none;
     position: fixed;
     display: block;
     left: 0px;
@@ -186,31 +205,31 @@ section#loc-sec {
 }
 
 #c1 {
-	display: none;
+    display: none;
     left: 0%;
     top: 0%;
 }
 
 #c2 {
-	display: none;
+    display: none;
     right: 0%;
     top: 0%;
 }
 
 #c3 {
-	display: none;
+    display: none;
     left: 0%;
     bottom: 0%;
 }
 
 #c4 {
-	display: none;
+    display: none;
     right: 0%;
     bottom: 0%;
 }
 
 #c5 {
-	display: none;
+    display: none;
     top: 0%;
     left: 50%;
 }
