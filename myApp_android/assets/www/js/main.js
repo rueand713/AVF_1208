@@ -1,75 +1,20 @@
 var height = window.innerHeight,
     width = window.innerWidth,
-    lat, lon, cloudData = [55, -0.15],
+    cloudData = [55, -0.15],
     cloudPause = [false, true];
 
 window.addEventListener("DOMContentLoaded", function(){
     
-    // alert function takes an array as first argument or all 4 arguments
-    function notify(msg, func, title, btnval) {
-        
-        // if msg is an array of properties
-        if (typeof(msg) == "object") {
-            func = msg.callback;
-            title = msg.title;
-            btnval = msg.btnval;
-            msg = msg.msg;
-        }
-        else {
-            // if arguments are missing sets defaults
-            if (!msg || typeof(msg) != "string") {msg = "An error occurred!"};
-            if (!func || typeof(func) != "function") {func = function(){}};
-            if (!title || typeof(title) != "string") {title = "Exception"};
-            if (!btnval || typeof(btnval) != "string") {btnval = "Done"};
-        };
-        
-        // sets the notification
-        navigator.notification.alert(msg, func, title, btnval);
-    };
-    
-    
-    // geo-location success callback
-    function success(position){
-        
-        // sets the map div to show
-        styl("#loc-sec", "block", "show");
-        
-        // sets the latitude and longitude values for global usage
-            lat = position.coords.latitude;
-            lon = position.coords.longitude;
-        
-        var target = find("geo-loc").$id(),
-            mapPos = "http://maps.googleapis.com/maps/api/staticmap?center=" +
-                     lat + "," + lon + "&zoom=15&size=320x240&maptype=roadmap" +
-                     "&markers=color:blue%7Clabel:A%7C"+ lat + "," + lon + "&sensor=true";
-                     
-        // create the google map with the passed in map position values
-        if (find("img").$tag().length < 1) {
-            _element(target, "img", ["src", mapPos], "make");
-        };
-    };
-    
-    
-    // geo-location error callback
-    function fail(error) {
-        var ermsg = error.message,
-            ercode = error.code;
-            
-            // alert the error code and message
-            notify("ERROR: " + ercode + " // " + ermsg);
-    };
-    
-    
     // foreground setting
     function setFg() {
         
-    	// show the foreground section
+        /*// show the foreground section
     	styl("#foreground", "block", "show");
     	
     	for (var i=0; i<5; i++) {
     	styl("#c"+(i+1), "inline", "show");
-    	};
-    	
+    	};*/
+        
         // fetches the cloud divs
         var cDivs = sel("div#cloud-wrapper > div");
         
@@ -98,12 +43,16 @@ window.addEventListener("DOMContentLoaded", function(){
     function setEvents() {
         var fitLink = "https://rueand713.cloudant.com/myfitapp/_design/fitapp/index.html",
             wk1Link = "discussion1.html",
+            wk2Link = "discussion2.html",
+            alertLink = "notifications.html",
+            geoLink = "geolocation.html",
+            accLink = "accelerometer.html",
             fitId = find("my-fitness").$id(),
             geoId = find("geoloc").$id(),
             alertId = find("alerts").$id(),
+            accId = find("accelero").$id(),
             wk1 = find("discuss-wk1").$id(),
-            adrbtn = find("addr-but").$id(),
-            adr = find("usr-addr").$id();
+            wk2 = find("discuss-wk2").$id();
         
         // create new window when the "My Fitness" button is clicked
         evt(fitId, "click", function(){
@@ -115,101 +64,74 @@ window.addEventListener("DOMContentLoaded", function(){
            window.open(wk1Link, "Discussion 1");
         }).make();
         
-        // set the click function for geo-location
-        evt(geoId, "click", function(){
-        	var opts = {maximumAge:1000, timeout: 5000, enableHighAccuracy: true};
-        	
-            // get location
-        	navigator.geolocation.getCurrentPosition(success, fail, opts);    
+        // create a new window for the first week discussion
+        evt(wk2, "click", function(){
+           window.open(wk2Link, "Discussion 2");
         }).make();
         
         evt(alertId, "click", function(){
-            notify("To test a real notification \n "+
-                   "Submit a null value into the 'Map It' feature.", null, "Test Alert", "OK");    
+            window.open(alertLink, "Notification Feature");
         }).make();
         
-        // set the "map it" click function
-        evt(adrbtn, "click", function(){
-            var to = adr.value.replace(" ", "+", "gi");
-            
-            // verifies that something was input before proceeding
-            if (adr.value != null && adr.value != "") {
-                
-                // if the latitude and longitude were never set
-                if (lat != undefined && lon != undefined) {
-                    var mapPos = "http://maps.googleapis.com/maps/api/staticmap?" +
-                                 "size=320x240&maptype=roadmap" +
-                                 "&markers=color:blue%7Clabel:A%7C"+ lat + "," + lon +
-                                 "&markers=color:blue%7Clabel:B%7C" + to +
-                                 "&path=color:0x0000ff|weight:5|" +
-                                 lat + "," + lon + "|" + to + "&sensor=false";
-                    
-                    // finds the image and resets its source attribute
-                    _attribute(find("img").$tag(1), ["src", mapPos], "set");
-                };
-            } else {
-                
-                var err = {
-                    msg: "Please enter a valid address",
-                    callback: function(){},
-                    title: "Oops!",
-                    btnval: "Done"
-                };
-                
-                // alert nothing was input
-                notify(err);
-            };
-            
+        evt(accId, "click", function(){
+            window.open(accLink, "Accelerometer Feature");
         }).make();
         
+        evt(geoId, "click", function(){
+            window.open(geoLink, "Geolocation Feature");
+        }).make();
+        
+        
+        // checks the screensize can support the cloud graphics
         if ((width * 1) > 540) {
-	        // sets the mouseover event for the moving cloud
-	        evt(find("c5").$id(), "touchstart", function(){
-	            
-	            // checks if pause is set or unset
-	            // takes action based on that logic
-	            if (cloudPause[0] === false && cloudPause[1] === true) {
-	                // pause
-	                cloudPause[0] = true;
-	            }
-	            else if (cloudPause[0] === true && cloudPause[1] === true) {
-	                // unpause
-	                cloudPause[0] = false;  
-	            };
-	            
-	            // prevents multiple hovering events from firing by setting the pause to false
-	            cloudPause[1] = false;
-	            
-	            // set a callback function to allow pausing of the cloud again
-	            // after 1/4 of a second wait
-	            timr(250, false, function(){
-	                // sets the pause available to true
-	                cloudPause[1] = true;    
-	            });
-	        }).make();
-	        
-	        // set the 5th cloud movement
-	        timr(20, true, function(){
-	              if (cloudPause[0] === false) {
-	                    var cloudMov = find("c5").$id(),
-	                      nWid = window.innerWidth;
-	                      
-	                 // tracks the cloud movement and direction
-	                 // sets the clouds left position to the value stored in the cloud data
-	                  cloudData[0] += cloudData[1];
-	                  cloudMov.style.left= String(cloudData[0] + "%");
-	                  
-	                  // if the cloud goes out of the screen reset the direction
-	                  if (cloudMov.offsetLeft < -50) {
-	                    //cloudData[0] = 0;
-	                    cloudData[1] = 0.15;
-	                  }
-	                  else if (cloudMov.offsetLeft >= (nWid * 0.91)) {
-	                    //cloudData[0] = 91;
-	                    cloudData[1] = -0.15;
-	                  };
-	              };
-	        });
+            // sets the mouseover event for the moving cloud
+            evt(find("c5").$id(), "touchstart", function(){
+                
+                // checks if pause is set or unset
+                // takes action based on that logic
+                if (cloudPause[0] === false && cloudPause[1] === true) {
+                    // pause
+                    cloudPause[0] = true;
+                }
+                else if (cloudPause[0] === true && cloudPause[1] === true) {
+                    // unpause
+                    cloudPause[0] = false;  
+                };
+                
+                // prevents multiple hovering events from firing by setting the pause to false
+                cloudPause[1] = false;
+                
+                // set a callback function to allow pausing of the cloud again
+                // after 1/4 of a second wait
+                timr(250, false, function(){
+                    // sets the pause available to true
+                    cloudPause[1] = true;    
+                });
+            }).make();
+            
+            // set the 5th cloud movement
+            timr(20, true, function(){
+                  if (cloudPause[0] === false) {
+                        var cloudMov = find("c5").$id(),
+                          nWid = window.innerWidth;
+                          
+                     // tracks the cloud movement and direction
+                     // sets the clouds left position to the value stored in the cloud data
+                      cloudData[0] += cloudData[1];
+                      cloudMov.style.left= String(cloudData[0] + "%");
+                      
+                      // if the cloud goes out of the screen reset the direction
+                      if (cloudMov.offsetLeft < -50) {
+                        //cloudData[0] = 0;
+                        cloudData[1] = 0.15;
+                      }
+                      else if (cloudMov.offsetLeft >= (nWid * 0.91)) {
+                        //cloudData[0] = 91;
+                        cloudData[1] = -0.15;
+                      };
+                  };
+            });
+            
         };
 
     };
