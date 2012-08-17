@@ -8,13 +8,6 @@ window.addEventListener("DOMContentLoaded", function(){
     // foreground setting
     function setFg() {
         
-        /*// show the foreground section
-    	styl("#foreground", "block", "show");
-    	
-    	for (var i=0; i<5; i++) {
-    	styl("#c"+(i+1), "inline", "show");
-    	};*/
-        
         // fetches the cloud divs
         var cDivs = sel("div#cloud-wrapper > div");
         
@@ -41,18 +34,24 @@ window.addEventListener("DOMContentLoaded", function(){
     
     // navigational events
     function setEvents() {
-        var fitLink = "https://rueand713.cloudant.com/myfitapp/_design/fitapp/index.html",
+        var fitLink = "http://rueand713.github.com/ASD_1206/index.html",
             wk1Link = "discussion1.html",
             wk2Link = "discussion2.html",
+            wk3Link = "discussion3.html",
             alertLink = "notifications.html",
             geoLink = "geolocation.html",
+            comLink = "compass.html",
+            camLink = "camera.html",
             accLink = "accelerometer.html",
             fitId = find("my-fitness").$id(),
             geoId = find("geoloc").$id(),
+            camId = find("camera").$id(),
             alertId = find("alerts").$id(),
             accId = find("accelero").$id(),
+            comId = find("compass").$id(),
             wk1 = find("discuss-wk1").$id(),
-            wk2 = find("discuss-wk2").$id();
+            wk2 = find("discuss-wk2").$id(),
+            wk3 = find("discuss-wk3").$id();
         
         // create new window when the "My Fitness" button is clicked
         evt(fitId, "click", function(){
@@ -69,6 +68,11 @@ window.addEventListener("DOMContentLoaded", function(){
            window.open(wk2Link, "Discussion 2");
         }).make();
         
+        // create a new window for the first week discussion
+        evt(wk3, "click", function(){
+           window.open(wk3Link, "Discussion 3");
+        }).make();
+        
         evt(alertId, "click", function(){
             window.open(alertLink, "Notification Feature");
         }).make();
@@ -81,11 +85,18 @@ window.addEventListener("DOMContentLoaded", function(){
             window.open(geoLink, "Geolocation Feature");
         }).make();
         
+        evt(comId, "click", function(){
+            window.open(comLink, "Compass Feature");
+        }).make();
+        
+        evt(camId, "click", function(){
+            window.open(camLink, "Camera Feature");
+        }).make();
         
         // checks the screensize can support the cloud graphics
         if ((width * 1) > 540) {
             // sets the mouseover event for the moving cloud
-            evt(find("c5").$id(), "mouseover", function(){
+            evt(find("c5").$id(), "touchstart", function(){
                 
                 // checks if pause is set or unset
                 // takes action based on that logic
@@ -139,11 +150,8 @@ window.addEventListener("DOMContentLoaded", function(){
     
 // Function calls
     
-    // set height based on visible browser screen size
-    styl("article", String(height * 0.90) + "px", "resize-y");
-    
     // set FG images
-    if ((width * 1) > 540) {setFg()};
+    if ((width * 1) > 640) {setFg()};
     
     // set CRUD navigation events
     setEvents();

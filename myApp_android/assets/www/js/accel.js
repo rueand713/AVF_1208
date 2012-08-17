@@ -32,8 +32,3 @@ window.addEventListener("DOMContentLoaded", rooScript);
             styl("#"+n, err[n], "innertx");
         };
     };
-    
-    function rooScript(){
-    // set height based on visible browser screen size
-    styl("article", String(height * 0.90) + "px", "resize-y");
-    };

@@ -2,9 +2,8 @@ var height = window.innerHeight;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 window.addEventListener("DOMContentLoaded", rooScript);
-    
+
     function onDeviceReady() {
-        alert("Create a custom notification!");
         
         // alert function takes an array as first argument or all 4 arguments
        function notify(msg, func, title, btnval) {
@@ -31,15 +30,9 @@ window.addEventListener("DOMContentLoaded", rooScript);
        };
        
        // sets the event to send a custom notification
-           evt(find("clickMe").$id(), "click", function(){
-                   var msg = find("alert-msg").$id().value.split("/");
-                   notify(msg[0], null, msg[1], msg[2]);
-            }).make();
-};
-
-    function rooScript() {
-           
-           // set height based on visible browser screen size
-           styl("article", String(height * 0.90) + "px", "resize-y");
-    };
+       evt(find("clickMe").$id(), "click", function(){
+               var msg = find("alert-msg").$id().value.split("/");
+               notify(msg[0], null, msg[1], msg[2]);
+           }).make();
     
+};

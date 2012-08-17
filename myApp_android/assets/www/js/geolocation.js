@@ -6,7 +6,6 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 window.addEventListener("DOMContentLoaded", rooScript);
     
-    
     function onDeviceReady() {
 	var adrbtn = find("addr-but").$id(),
             adr = find("usr-addr").$id();
@@ -74,10 +73,4 @@ window.addEventListener("DOMContentLoaded", rooScript);
             
             // alert the error code and message
             alert("ERROR: " + ercode + " // " + ermsg);
-    };
-
-
-    function rooScript() {
-    	// set height based on visible browser screen size
-    	styl("article", String(height * 0.90) + "px", "resize-y");
     };

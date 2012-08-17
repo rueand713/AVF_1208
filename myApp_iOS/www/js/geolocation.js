@@ -74,9 +74,3 @@ window.addEventListener("DOMContentLoaded", rooScript);
             // alert the error code and message
             alert("ERROR: " + ercode + " // " + ermsg);
     };
-    
-	
-    function rooScript() {
-	// set height based on visible browser screen size
-	styl("article", String(height * 0.90) + "px", "resize-y");
-    };

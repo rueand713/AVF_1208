@@ -24,6 +24,7 @@
 	<true/>
 	<key>ExternalHosts</key>
 	<array>
+		<string>*.github.com</string>
 		<string>*.googleapis.com</string>
 		<string>*.cloudant.com</string>
 	</array>
