@@ -9,6 +9,10 @@ img {
     max-width: 100%;
 }
 
+fieldset {
+    border-style: none;
+}
+
 body {
     background-color: #000;
     background-image: -moz-linear-gradient(#fff 0%, #aaa 15%, #fff 20%, #aaa 35%, #fff 40%, #aaa 55%, #fff 60%, #aaa 75%, #fff 80%, #aaa 95%, #fff 100%);
@@ -22,7 +26,7 @@ body {
     min-height: 100%;
 }
 
-article {
+section#content {
     margin: auto 0px;
     position: relative;
     background-color: transparent;
@@ -30,7 +34,6 @@ article {
     max-width: 90%;
     padding: 0.25% 2.75%;
     clear: both;
-    /*overflow: hidden;*/
 }
 
 a {
@@ -42,7 +45,7 @@ a {
 .site-header {
     border-style: solid;
     border-width: medium;
-    border-radius: 0.625em; /*10px*/
+    border-radius: 0.625em;
     border-color: #7789ab;
     background-color: #556789;
     background-image: -moz-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
@@ -60,7 +63,7 @@ a {
 ._2col-section {
     border-style: solid;
     border-width: medium;
-    border-radius: 0.625em; /*10px*/
+    border-radius: 0.625em;
     border-color: #7789ab;
     background-color: #334567;
     background-image: -moz-linear-gradient(#556789 0%, #334567 15%, #334567 90%, #556789 100%);
@@ -72,22 +75,21 @@ a {
     min-width: 48%;
     max-width: 48%;
     padding: 0.25% 0.3%;
-    min-height: 20.3125em /*325px*/;
+    min-height: 20.3125em;
     overflow: auto;
     float: left;
 }
 
-.main-section-div {
-    padding: 0%;
-    margin: 0%;
-    width: 95%;
-}
-
 /* ---- SKELETON CUSTOMIZATION ENDS HERE ----- */
 
+ul {
+    overflow: hidden;
+    padding: 0 0.3125em;
+}
 
 li {
     list-style: none;
+    display: inline;
 }
 
 h1 {
@@ -108,25 +110,27 @@ h3 {
     letter-spacing: 0.125em;
 }
 
-.float-left, .no-float {
-    width: 100%;
-}
-
 .float-left {
+    width: 100%;
     float: left;
     clear: left;
 }
 
-.no-float {
+.no-fill {
     float: none;
-    clear: both;
+    border: none;
+    display: inline;
+    background: none;
+    background-color: transparent;
+    margin: inherit;
 }
 
-div > a {
+li > a, .home-link > a {
     float: left;
-    height: 4em; /*64px*/
-    width: 4em; /*64px*/
+    height: 4em;
+    width: 4em;
     color: #fff;
+    display: inline-block;
     padding: 3% 1% 0% 1%;
     margin: auto 1%;
     border-radius: 9%;
@@ -140,18 +144,26 @@ div > a {
                       color-stop(15%, #9a1010), color-stop(90%, #9a1010), color-stop(100%, #f4f5f9)); 
 }
 
+.home-link {
+    float: left;
+}
+
 ul.discussion > li{
-    display: inline-block;
+    display: block;
     margin: auto 1%;
+}
+
+.normal > li {
+    display: block;
 }
 
 a.discussion {
     display: block;
-    height: 3.125em; /*50px x 50px*/
+    height: 3.125em;
     width: 3.125em;
     color: #fff;
-    margin: auto 1px;
-    padding: 9% 4% 0% 4%;
+    margin: auto 0.125em;
+    padding: 4% 4% 0% 4%;
     border-radius: 9%;
     border-color: #fff;
     border-width: 4%;
@@ -161,10 +173,6 @@ a.discussion {
     background-image: -webkit-linear-gradient(#f4f5f9 0%, #9a1010 10%, #681010 50%, #9a1010 90%, #f4f5f9 100%);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f5f9),
                       color-stop(15%, #9a1010), color-stop(90%, #9a1010), color-stop(100%, #f4f5f9)); 
-}
-
-.home-link {
-    float: left;
 }
 
 /* Map styling starts here */
@@ -181,10 +189,10 @@ div#geo-loc img, img#cam-shot {
     border-width: medium;
     border-style: solid;
     border-color: #fff;
-    border-radius: 0.625em; /*10px*/
+    border-radius: 0.625em;
 }
 
-#alerts span, #compass span, #camera span {
+#alerts span, #compass span, #camera span, #contacts span, .home-link span {
     display: block;
     padding-top: 25%;
 }
@@ -202,8 +210,8 @@ div#geo-loc img, img#cam-shot {
 
 .fg-image {
     background-image: url("../images/clouds.png");
-    width: 8.125em;/*130px*/
-    height: 5em;/*80px*/
+    width: 8.125em;
+    height: 5em;
     padding: 0px;
     margin: 0px;
     z-index: 10;
@@ -240,11 +248,11 @@ div#geo-loc img, img#cam-shot {
 /* Compass styling */
 #compass-img {
     background-image: url("../images/compass.png");
-    width: 11.25em; /*180px*/
-    height: 11.25em; /*180px*/
+    width: 11.25em;
+    height: 11.25em;
     padding: 0px;
     margin: 0 auto;
-    border-radius: 0.625em; /*10px*/
+    border-radius: 0.625em;
     border-color: #fff;
     border-width: medium;
 }
@@ -266,4 +274,25 @@ div#geo-loc img, img#cam-shot {
         #c1, #c2, #c3, #c4, #c5 {
             display: none;
         }
+}
+
+textarea {
+    min-width: 90%;
+    margin-left: 1.25em;
+}
+
+.accept {
+    min-width: 92%;
+    margin-left: 1.25em;
+}
+
+fieldset > input {
+    display: block;
+    min-width: 92%;
+    margin-left: 1.25em;
+}
+
+#err-section {
+    display: none;
+    color: #dd0000;
 }
