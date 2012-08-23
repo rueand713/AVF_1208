@@ -1,5 +1,4 @@
-var height = window.innerHeight,
-    width = window.innerWidth,
+var width = window.innerWidth,
     cloudData = [55, -0.15],
     cloudPause = [false, true];
 
@@ -42,8 +41,12 @@ window.addEventListener("DOMContentLoaded", function(){
             geoLink = "geolocation.html",
             comLink = "compass.html",
             camLink = "camera.html",
+            cntLink = "contacts.html",
             accLink = "accelerometer.html",
+            fsyLink = "file.html",
             fitId = find("my-fitness").$id(),
+            cntId = find("contacts").$id(),
+            fsyId = find("filesys").$id(),
             geoId = find("geoloc").$id(),
             camId = find("camera").$id(),
             alertId = find("alerts").$id(),
@@ -91,6 +94,14 @@ window.addEventListener("DOMContentLoaded", function(){
         
         evt(camId, "click", function(){
             window.open(camLink, "Camera Feature");
+        }).make();
+        
+        evt(fsyId, "click", function(){
+            window.open(fsyLink, "Filesystem Feature");
+        }).make();
+        
+        evt(cntId, "click", function(){
+            window.open(cntLink, "Contacts Feature");
         }).make();
         
         // checks the screensize can support the cloud graphics

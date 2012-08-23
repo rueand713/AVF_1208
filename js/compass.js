@@ -1,9 +1,6 @@
-var watchID,
-    height = window.innerHeight;
+var watchID;
 
 document.addEventListener("deviceready", onDeviceReady, false);
-window.addEventListener("DOMContentLoaded", rooScript);
-
 
     function onDeviceReady(){
         var opts = {frequency: 2000};

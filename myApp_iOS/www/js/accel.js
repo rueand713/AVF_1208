@@ -1,8 +1,6 @@
-var height = window.innerHeight,
-    watchID;
+var watchID;
 
 document.addEventListener("deviceready", onDeviceReady, false);
-window.addEventListener("DOMContentLoaded", rooScript);
 
     function onDeviceReady(){
         alert("Position is being watched!");

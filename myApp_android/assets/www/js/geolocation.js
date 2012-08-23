@@ -1,10 +1,8 @@
 // globals
-    var lat, lon,
-	height = window.innerHeight;
+    var lat, lon;
 	    
 
 document.addEventListener("deviceready", onDeviceReady, false);
-window.addEventListener("DOMContentLoaded", rooScript);
     
     function onDeviceReady() {
 	var adrbtn = find("addr-but").$id(),

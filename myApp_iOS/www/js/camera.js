@@ -1,7 +1,4 @@
-var height = window.innerHeight;
-
 document.addEventListener("deviceready", onDeviceReady, false);
-window.addEventListener("DOMContentLoaded", rooScript);
 
     function onDeviceReady() {
         var opts = {quality: 50,
