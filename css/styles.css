@@ -278,18 +278,18 @@ div#geo-loc img, img#cam-shot {
 
 textarea {
     min-width: 90%;
-    margin-left: 1.25em;
+    margin: auto 0.625em;
 }
 
 .accept {
     min-width: 92%;
-    margin-left: 1.25em;
+    margin: auto 0.625em;
 }
 
 fieldset > input {
     display: block;
     min-width: 92%;
-    margin-left: 1.25em;
+    margin: auto 0.625em;
 }
 
 #err-section {
